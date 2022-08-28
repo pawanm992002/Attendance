@@ -1,0 +1,112 @@
+.loginform{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    gap: 5px;
+}
+.headfield{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100vh;
+}
+.headfield img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 100vh;
+    opacity: 0.4;
+}
+.headfield h2 {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translate(-50%, 0%);
+    font-size: 30px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #855ef0, #c29de6);
+    color: transparent;
+    background-clip: text;
+    width: 80%;
+    text-align: center;
+}
+.student {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;   
+}
+.teacher {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+}
+.btn{
+    margin: 5px;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    padding: 0 32px;
+    border-radius: 6px;
+    color: #fff;
+    height: 48px;
+    font-size: 18px;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+}
+.btn:hover{
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3c4fe0;
+    transform: translateY(-2px);
+}
+.btn:active{
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3c4fe0;
+    transform: translateY(-2px);
+}
+.contentfield{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    /* border: 10px solid rgb(106, 106, 103); */
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px 5px; */
+    padding: 30px 10px;
+    background: rgb(76, 72, 72);
+    height: 100vh;
+}
+.contentfield h2 {
+    margin: 15px 5px;
+    font-size: 30px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+}
+.field{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5px;
+}
+.field input {
+    height: 35px;
+    width: 60%;
+    font-size: larger;
+}
+@media only screen and (max-width:700px) {
+    .loginform{
+        flex-direction: column;
+    }
+    .headfield{
+        width: 100%;
+        height: 40vh;
+    }
+    .contentfield{
+        width: 100%;
+        height: 60vh;
+    }
+}

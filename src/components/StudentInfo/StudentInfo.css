@@ -1,0 +1,154 @@
+#studentInfo{
+    width: 100vw;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+}
+header {
+    display: flex;
+    padding: 8px 9px;
+    width: 100%;
+    height: 55px;
+    justify-content: space-around;
+    background-color: #B6A7A7;
+}
+header img {
+    border-radius: 50%;
+}
+.search {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.search i {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    color: black;
+}
+.search > input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+}
+header button {
+    border-radius: 15px;
+    width: 60px;
+}
+.classroomCont{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+
+}
+.classroomCont > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.classroomContent{
+    position: absolute;
+    top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    overflow-y: scroll;
+    height: 85vh;
+    box-sizing: content-box;
+}
+::-webkit-scrollbar {
+    width: 0; 
+    background: transparent; 
+}
+.classroom {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(217, 217, 217, 0.9);
+    width: 340px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 5px;
+    border-radius: 15px;
+}
+.classfield{
+    width: 80%;
+    color: rgb(47, 54, 152);
+    font-size: large;
+}
+.joinClass{
+    position: absolute;
+    width: 100%;
+    background-color: #D67F7F;
+    border-radius: 10px;
+    width: 200px;
+    height: 35px;
+    right: 30px;
+    top: 10px;
+    color: white;
+    border: none;
+}
+
+/* /////////////// */
+/* classroom css */
+
+.studentClassroom{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    position: relative;
+
+}
+.asideClassroom {
+    background-color: #B6A7A7;
+    width: 30%;
+    justify-content: center;
+    padding: 10px 15px;
+    overflow-y: scroll;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+.asideClassroom div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    height: 150px;
+    margin: 8px auto;
+}
+.mainClassroom {
+    width: 70%;
+    display: grid;
+    grid-template-areas: 'box1 box2 box3' 'box4 box4 box4' ;
+    position: absolute;
+    right: 0;
+}
+.mainClassroom > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.box1 {
+    grid-area: box1;
+    
+}
+.box2 {
+    grid-area: box2;
+}
+.box3 {
+    grid-area: box3;
+}
+.box4 {
+    grid-area: box4;
+}

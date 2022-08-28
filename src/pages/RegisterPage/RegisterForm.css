@@ -1,0 +1,53 @@
+#studentRegister{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+#studentRegister img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.5;
+}
+.form {
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(251, 203, 112, 0.3);
+    border-radius: 20px;
+    padding: 10px;
+}
+.form > h2 {
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;   
+	font-size: 25px;
+	text-transform: uppercase;
+	text-shadow: 0 2px rgb(164, 163, 163), 0 2px rgb(39, 38, 38);
+    width: 80%;
+    text-align: center;
+    margin: 5px auto;
+    margin-bottom: 20px;
+}
+.input { 
+    width: 80%;
+    height: 35px;
+    margin: 5px auto;
+    text-align: center;
+    border-radius: 50px;
+}
+
+@media only screen and (max-width:700px) {
+    .form{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);    
+        height: 80%;    
+        width: 80%;
+    }
+}
