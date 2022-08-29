@@ -6,10 +6,10 @@
 }
 header {
     display: flex;
-    padding: 8px 9px;
+    padding: 8px 15px;
     width: 100%;
     height: 55px;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #B6A7A7;
 }
 header img {
@@ -29,14 +29,25 @@ header img {
     color: black;
 }
 .search > input{
+    height: 35px;
     width: 100%;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     border: none;
+    padding-left: 15px;
+    outline: none;
 }
 header button {
     border-radius: 15px;
     width: 60px;
+}
+.navName{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: larger;
+    color: black;
+    align-items: center;
 }
 .classroomCont{
     display: flex;
@@ -55,7 +66,7 @@ header button {
     position: absolute;
     top: 60px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
     width: 100%;
@@ -70,18 +81,10 @@ header button {
 .classroom {
     display: flex;
     flex-direction: column;
-    background-color: rgba(217, 217, 217, 0.9);
-    width: 340px;
-    height: 150px;
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(173, 163, 163, 0.95);
+    justify-content: space-between;
+    align-items:center;
     padding: 8px 5px;
-    border-radius: 15px;
-}
-.classfield{
-    width: 80%;
-    color: rgb(47, 54, 152);
-    font-size: large;
 }
 .joinClass{
     position: absolute;

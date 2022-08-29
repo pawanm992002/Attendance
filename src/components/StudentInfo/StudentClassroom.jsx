@@ -1,11 +1,11 @@
-import StudentNav from "../others/StudentNav";
 import "./StudentInfo.css";
 import classroomPic from "../../images/classroom.jpg";
+import Navbar from "../others/Navbar";
 
 function StudentClassroom() {
   return (
     <>
-      <StudentNav />
+      <Navbar />
       <div className="studentClassroom">
         <img src={classroomPic} />
         <aside className="asideClassroom">

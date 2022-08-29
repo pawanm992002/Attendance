@@ -1,22 +1,24 @@
-import Home from "./pages/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Student from "./pages/RegisterPage/Student";
-import Teacher from "./pages/RegisterPage/Teacher";
 import TeacherInfo from "./components/TeacherInfo/TeacherInfo";
 import StudentInfo from "./components/StudentInfo/StudentInfo";
 import StudentClassroom from "./components/StudentInfo/StudentClassroom";
+import Classroom from "./pages/RegisterPage/Classroom";
+import TeacherClassroom from "./components/TeacherInfo/TeacherClassroom";
+import Auth from "./pages/authrization/Auth";
+
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/student" element={<Student />} />
-          <Route path="/student/studentInfo" element={<StudentInfo />} />
+          <Route path="/" element={<Auth />} />
+          <Route path="/student" element={<StudentInfo />} />
           <Route path="/student/classroom" element={<StudentClassroom />} />
 
-          <Route path="/teacher" element={<Teacher />} />
-          <Route path="/teacherInfo" element={<TeacherInfo />} />
+          <Route path="/teacher" element={<TeacherInfo />} />
+          <Route path="/teacher/classroom" element={<TeacherClassroom />} />
+
+          <Route path="/classroomForm" element={<Classroom />} />
         </Routes>
       </BrowserRouter>
     </>

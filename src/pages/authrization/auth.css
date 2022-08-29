@@ -1,0 +1,216 @@
+.authContainer img{
+    width:100vw;
+    height:100vh;
+    position:relative;
+  }
+  .authWrapper{
+    display:flex;
+    width:900px;
+    height:400;
+    position:absolute;
+    bottom:50px;
+    right:50px;
+    opacity: 0.9;
+  }
+ .authSideImg{
+    width:500px;
+    height:400px;
+    position:relative;
+  }
+  
+ .authSideImg img{
+    width:500px;
+    height:400px;
+  }
+
+ .authLeftSideBtns{
+    display:flex;
+    position:absolute;
+    bottom:20px;
+    justify-content:center;
+    width:100%;
+  }  
+
+.authStudentBtn{
+   border:none;
+   margin-right:5px;
+   padding:5px 10px;
+   border-radius:5px;
+   background-color:#3A3B3F;
+   color:#fff;
+   cursor: pointer;
+  }
+.authTeacherBtn{
+    border:none;
+    margin-left:5px;
+    padding:5px 10px;
+    border-radius:5px;
+    background-color:#3A3B3F;
+    color:#6B6C72;
+    cursor: pointer;
+  }
+  .authForm{
+    width: 400px;
+    height: 400px;
+    background-color: #A19B9B;
+  }
+.ChoiceBtns{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+} 
+
+.RegisterBtn{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px;
+    background-color: #787471;
+    color: #9C9894;
+    cursor: pointer;
+}
+
+.LoginBtn{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #787471;
+    color: #fff;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+.Form form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.Form form input{
+  border: none;
+  outline: none;
+  margin: 10px 0;
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+
+.Form form button{
+    border: none;
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #8F8888;
+    color: #fff;
+    cursor: pointer;
+}
+.forgetPassword{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  padding-right: 50px;
+  color: #ad1616;
+}
+
+.btn{
+  margin: 5px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow,transform;
+  background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+  padding: 0 32px;
+  border-radius: 6px;
+  color: #fff;
+  height: 48px;
+  font-size: 18px;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease,transform 0.15s ease;
+}
+
+@media screen and (max-width:1100px){
+    .authWrapper{
+        width:700px;
+        height:400;
+      } 
+      .authSideImg img{
+        width:400px;
+        height:400px;
+      }
+}
+@media screen and (max-width:900px){
+    .authWrapper{
+        width:650px;
+        height:350;
+      } 
+      .authSideImg{
+        width: 350px;
+        height:350px;
+      }
+      .authSideImg img{
+        width:350px;
+        height:350px;
+      }
+      .authForm{
+        height: 350px;
+      }
+
+    .Form form input{
+       margin: 5px 0;
+       padding: 5px;
+     }
+}
+
+@media screen and (max-width:750px){
+    .authWrapper{
+        width:80%;
+        flex-direction: column;
+        height:550;
+      } 
+      .authSideImg{
+        width: 100%;
+        height:200px;
+      }
+      .authSideImg img{
+        width:100%;
+        height:200px;
+      }
+      .authForm{
+        width:100%;
+        height: 350px;
+      }
+}
+
+@media screen and (max-width:500px){
+  .authContainer{
+    display: flex;
+    justify-content: center;
+  }
+  .authWrapper{
+    display:flex;
+    width:96%;
+    height:auto;
+    position:absolute;
+    bottom:30px;
+    right:auto;
+    opacity: 0.8;
+  }
+ .authSideImg{
+    width:100%;
+    height:200px;
+    position:relative;
+  }
+  
+ .authSideImg img{
+    width:100%;
+    height:200px;
+  }
+  .authForm{
+    height: 330px;
+  }
+
+}
