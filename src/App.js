@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TeacherInfo from "./components/TeacherInfo/TeacherInfo";
 import StudentInfo from "./components/StudentInfo/StudentInfo";
 import StudentClassroom from "./components/StudentInfo/StudentClassroom";
-import Classroom from "./pages/RegisterPage/Classroom";
+
 import TeacherClassroom from "./components/TeacherInfo/TeacherClassroom";
 import Auth from "./pages/authrization/Auth";
 
@@ -18,7 +18,7 @@ function App() {
           <Route path="/teacher" element={<TeacherInfo />} />
           <Route path="/teacher/classroom" element={<TeacherClassroom />} />
 
-          <Route path="/classroomForm" element={<Classroom />} />
+          {/* <Route path="/classroomForm" element={<Classroom />} /> */}
         </Routes>
       </BrowserRouter>
     </>

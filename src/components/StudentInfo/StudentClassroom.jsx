@@ -1,8 +1,17 @@
 import "./StudentInfo.css";
 import classroomPic from "../../images/classroom.jpg";
 import Navbar from "../others/Navbar";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function StudentClassroom() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!JSON.parse(localStorage.getItem("teacherInfo"))) {
+      navigate("/");
+    }
+  }, []);
   return (
     <>
       <Navbar />

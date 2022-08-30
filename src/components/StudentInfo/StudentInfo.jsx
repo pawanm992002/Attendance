@@ -3,15 +3,35 @@ import idea from "../../images/idea.jpg";
 import Card from "../others/Card";
 import Navbar from "../others/Navbar";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import ClassroomForm from "../../pages/RegisterPage/ClassroomForm";
 
 function StudentInfo() {
+  const [Classrooms, setClassrooms] = useState([]);
+  const [studentDetail, setstudentDetail] = useState({});
+  const fetchStudent = async () => {
+    const localStudent = JSON.parse(localStorage.getItem("studentInfo"));
+    if (!localStudent) {
+      navigate("/");
+    }
+    const { data } = await axios.get(`/api/Student/${localStudent._id}`);
+    setstudentDetail(data.data);
+    setClassrooms(data.data.ClassRooms);
+    localStorage.setItem("studentInfo", JSON.stringify(data.data));
+    console.log(data.data);
+  };
+  useEffect(() => {
+    fetchStudent();
+  }, []);
+
   const cardstyle = {
     card: {
-      height: "150px",
+      height: "130px",
       margin: "8px 10px",
       width: "280px",
+      borderRadius: "8px",
     },
     nameStyle: {
       width: "100%",
@@ -23,18 +43,18 @@ function StudentInfo() {
     },
     fieldStyle: {
       width: "100%",
+      textAlign: "center",
     },
     IdStyle: {
       width: "100%",
       textAlign: "end",
       marginRight: "10px",
+      color: "#765D5D",
+      paddingRight: "15px",
     },
   };
   const navigate = useNavigate();
 
-  const openClassroom = () => {
-    console.log("jldjk");
-  };
   const name = "Pawan mishra";
   const detail = {
     classroomName: "toc",
@@ -49,12 +69,22 @@ function StudentInfo() {
       <main className="classroomCont">
         <img src={idea} />
 
-        <button className="joinClass">Join A Classroom</button>
-
+        <ClassroomForm isTeacher={false} Id={studentDetail._id} />
         <div className="classroomContent">
-          <Card detail={detail} cardstyle={cardstyle} />
-          <Card detail={detail} cardstyle={cardstyle} />
-          <Card detail={detail} cardstyle={cardstyle} />
+          {Classrooms.length ? (
+            Classrooms.map((ClassroomId) => {
+              return (
+                <Card
+                  key={ClassroomId}
+                  roomId={ClassroomId}
+                  isTeacher={false}
+                  cardstyle={cardstyle}
+                />
+              );
+            })
+          ) : (
+            <div className="classroom"> NO Clasroom found </div>
+          )}
         </div>
       </main>
     </div>
