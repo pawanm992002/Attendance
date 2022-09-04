@@ -47,7 +47,35 @@ function StudentClassroom() {
               <button className="Presentbtn">Mark Present</button>
               <button className="leavebtn">Leave Classroom</button>
             </div>
-            <div className="box4">Attendance Table</div>
+            <div className="AttendanceBox">
+              <ul>
+                <li className="AttendanceList">
+                  <span>ClassName</span>
+                  <span>Present</span>
+                  <span>25</span>
+                </li>
+                <li className="AttendanceList">
+                  <span>ClassName</span>
+                  <span>Present</span>
+                  <span>25</span>
+                </li>
+                <li className="AttendanceList">
+                  <span>ClassName</span>
+                  <span>Present</span>
+                  <span>25</span>
+                </li>
+                <li className="AttendanceList">
+                  <span>ClassName</span>
+                  <span>Present</span>
+                  <span>25</span>
+                </li>
+                <li className="AttendanceList">
+                  <span>ClassName</span>
+                  <span>Present</span>
+                  <span>25</span>
+                </li>
+              </ul>
+            </div>
           </main>
         </div>
       </div>
