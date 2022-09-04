@@ -1,3 +1,4 @@
+import "../ClassroomsStyle.css";
 import Card from "../others/Card";
 import Navbar from "../others/Navbar";
 import { useEffect } from "react";
@@ -9,31 +10,23 @@ import ClassroomForm from "../../pages/RegisterPage/ClassroomForm";
 
 function TeacherInfo() {
   const navigate = useNavigate();
-
-  const [availableClassroom, setAvailableClassroom] = useState(false);
   const [classrooms, setClassroom] = useState([]);
-  const [teacherName, setTeacherName] = useState("");
   const [teacherDetail, setteacherDetail] = useState({});
 
-  const fetchTeacher = async () => {
-    const localTeacher = JSON.parse(localStorage.getItem("teacherInfo"));
-    if (!localTeacher) {
-      navigate("/");
-      return;
-    }
-    const { data } = await axios.get(`/api/Teacher/${localTeacher._id}`);
-    setteacherDetail(data.data);
-    setTeacherName(data.data.Username);
-    if (data.data.ClassRooms.length) {
-      setClassroom(data.data.ClassRooms);
-      setAvailableClassroom(true);
-    }
-    localStorage.setItem("teacherInfo", JSON.stringify(data.data));
-  };
-
   useEffect(() => {
+    const fetchTeacher = async () => {
+      const localTeacher = JSON.parse(localStorage.getItem("teacherInfo"));
+      if (!localTeacher) {
+        navigate("/");
+        return;
+      }
+      const { data } = await axios.get(`/api/Teacher/${localTeacher._id}`);
+      setteacherDetail(data.data);
+      setClassroom(data.data.ClassRooms);
+      localStorage.setItem("teacherInfo", JSON.stringify(data.data));
+    };
     fetchTeacher();
-  }, []);
+  }, [teacherDetail]);
 
   const cardstyle = {
     card: {
@@ -63,28 +56,24 @@ function TeacherInfo() {
     },
   };
 
-  const CreateClassroom = () => {
-    navigate("/classroomForm");
-  };
   return (
     <>
-      <div id="studentInfo">
-        <Navbar name={teacherName} isTeacher={true} />
+      <div id="ClassCont">
+        <Navbar name={teacherDetail.Username} isTeacher={true} />
         <main className="classroomCont">
           <img src={teacherInfo} />
-          <ClassroomForm isTeacher={true} Id={teacherDetail._id} />
-          {/* <button className="joinClass" onClick={CreateClassroom}>
-            Create A Classroom
-          </button> */}
-
+          <ClassroomForm
+            isTeacher={teacherDetail.Admin}
+            Id={teacherDetail._id}
+          />
           <div className="classroomContent">
-            {availableClassroom &&
+            {classrooms.length &&
               classrooms.map((cards) => {
                 return (
                   <Card
                     key={cards}
                     roomId={cards}
-                    isTeacher={true}
+                    isTeacher={teacherDetail.Admin}
                     cardstyle={cardstyle}
                   />
                 );

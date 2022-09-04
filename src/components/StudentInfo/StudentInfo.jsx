@@ -1,4 +1,4 @@
-import "./StudentInfo.css";
+import "../ClassroomsStyle.css";
 import idea from "../../images/idea.jpg";
 import Card from "../others/Card";
 import Navbar from "../others/Navbar";
@@ -9,8 +9,8 @@ import axios from "axios";
 import ClassroomForm from "../../pages/RegisterPage/ClassroomForm";
 
 function StudentInfo() {
-  const [Classrooms, setClassrooms] = useState([]);
   const [studentDetail, setstudentDetail] = useState({});
+  const [Classrooms, setClassrooms] = useState([]);
   const fetchStudent = async () => {
     const localStudent = JSON.parse(localStorage.getItem("studentInfo"));
     if (!localStudent) {
@@ -20,11 +20,11 @@ function StudentInfo() {
     setstudentDetail(data.data);
     setClassrooms(data.data.ClassRooms);
     localStorage.setItem("studentInfo", JSON.stringify(data.data));
-    console.log(data.data);
   };
+
   useEffect(() => {
     fetchStudent();
-  }, []);
+  }, [studentDetail]);
 
   const cardstyle = {
     card: {
@@ -55,21 +55,12 @@ function StudentInfo() {
   };
   const navigate = useNavigate();
 
-  const name = "Pawan mishra";
-  const detail = {
-    classroomName: "toc",
-    teacherName: "vinesh",
-    noOfStudent: 50,
-    roomId: "216115212112",
-    isTeacher: false,
-  };
   return (
-    <div id="studentInfo">
-      <Navbar name={name} isTeacher={false} />
+    <div id="ClassCont">
+      <Navbar name={studentDetail.Username} isTeacher={studentDetail.Admin} />
       <main className="classroomCont">
         <img src={idea} />
-
-        <ClassroomForm isTeacher={false} Id={studentDetail._id} />
+        <ClassroomForm isTeacher={studentDetail.Admin} Id={studentDetail._id} />
         <div className="classroomContent">
           {Classrooms.length ? (
             Classrooms.map((ClassroomId) => {
@@ -77,7 +68,8 @@ function StudentInfo() {
                 <Card
                   key={ClassroomId}
                   roomId={ClassroomId}
-                  isTeacher={false}
+                  userId={studentDetail._id}
+                  isTeacher={studentDetail.Admin}
                   cardstyle={cardstyle}
                 />
               );

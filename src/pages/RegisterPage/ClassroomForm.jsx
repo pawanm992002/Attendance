@@ -80,7 +80,14 @@ export default function ClassroomForm({ Id, isTeacher }) {
           aria-describedby="modal-modal-description"
         >
           <form className="form" onSubmit={CreateClassroom} method="post">
-            <h2>Create Classroom</h2>
+            <h2>
+              Create Classroom
+              <i
+                onClick={handleClose}
+                className="fa fa-window-close"
+                aria-hidden="true"
+              ></i>
+            </h2>
             <input
               className="input"
               type="text"
@@ -100,7 +107,7 @@ export default function ClassroomForm({ Id, isTeacher }) {
               required
             />
 
-            <input type="submit" value="Join It" className="btn" />
+            <input type="submit" value="Create It" className="btn" />
           </form>
         </Modal>
       ) : (
@@ -111,7 +118,14 @@ export default function ClassroomForm({ Id, isTeacher }) {
           aria-describedby="modal-modal-description"
         >
           <form className="form" onSubmit={JoinClassroomHandler} method="post">
-            <h2>Join Classroom</h2>
+            <h2>
+              Join Classroom
+              <i
+                onClick={handleClose}
+                className="fa fa-window-close"
+                aria-hidden="true"
+              ></i>
+            </h2>
             <input
               className="input"
               type="text"
